@@ -1,29 +1,14 @@
 import { motion } from 'framer-motion';
-import { Target, Eye, ShieldCheck, Users, Globe, Lightbulb } from 'lucide-react';
+import { Target, Eye, ShieldCheck, Users, Globe, Lightbulb, Star, Zap, TrendingUp, CheckCircle } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 
 const About = () => {
   const values = [
-    {
-      title: 'Integrity',
-      description: 'We adhere to the highest ethical standards, ensuring transparency and trust in every partnership.',
-      icon: ShieldCheck,
-    },
-    {
-      title: 'Innovation',
-      description: 'We constantly challenge the status quo, bringing fresh perspectives and creative solutions to the table.',
-      icon: Lightbulb,
-    },
-    {
-      title: 'Collaboration',
-      description: 'We believe in the power of partnership, working closely with your team to achieve shared goals.',
-      icon: Users,
-    },
-    {
-      title: 'Global Impact',
-      description: 'Our strategies are designed to resonate on a global scale while remaining locally relevant.',
-      icon: Globe,
-    },
+    { title: 'Integrity', description: 'We do what is right—always. Trust is the foundation of everything we deliver.', icon: ShieldCheck },
+    { title: 'Excellence', description: 'We set a high bar and deliver with precision, discipline, and quality.', icon: Star },
+    { title: 'Client Impact', description: 'We focus on outcomes that matter—measurable, meaningful, and lasting.', icon: Target },
+    { title: 'Collaboration', description: 'We work as one team with our clients to solve complex challenges.', icon: Users },
+    { title: 'Continuous Improvement', description: 'We challenge the status quo and constantly seek better ways of working.', icon: TrendingUp },
   ];
 
   return (
@@ -42,9 +27,12 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block text-accent-gold font-bold uppercase tracking-[0.4em] text-xs mb-6">Our Legacy</span>
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">Empowering Growth <br />Since 2010</h1>
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">Transforming How Businesses<br />Operate, Grow, and Scale</h1>
+            <p className="max-w-2xl mx-auto text-xl text-slate-300 leading-relaxed mb-4">
+              Elev8 Consulting Group is a Sydney-based transformation partner helping small and growing businesses operate smarter, move faster, and scale with confidence.
+            </p>
             <p className="max-w-2xl mx-auto text-xl text-slate-300 leading-relaxed">
-              Elev8 Consulting Group was founded with a single mission: to provide organizations with the strategic clarity needed to thrive in a complex world.
+              We combine process excellence, data intelligence, and AI-enabled solutions to simplify operations, improve performance, and future-proof the way organisations work.
             </p>
           </motion.div>
         </div>
@@ -59,18 +47,27 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-primary-900 mb-8 leading-tight">Driven by Excellence, Rooted in Partnership.</h2>
+              <h2 className="text-4xl font-bold text-primary-900 mb-8 leading-tight">Our Story.</h2>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  Over the past 15 years, we have grown from a boutique firm in Sydney to a globally recognized consulting powerhouse. Our journey has been defined by the success of our clients.
+                  Elev8 Consulting Group is a Sydney-based transformation partner committed to helping organisations achieve extraordinary results through strategic insight, operational excellence, and human-centred innovation.
                 </p>
                 <p>
-                  We don't just provide advice; we integrate with your team, understand your unique culture, and co-create solutions that are both practical and transformative.
+                  Our diverse team of experts brings deep experience in strategic planning, technology integration, customer experience, and process optimisation. We don’t just advise – we collaborate hand-in-hand to deliver tailored solutions that drive real, measurable growth.
+                </p>
+                <p>
+                  Rooted in integrity, curiosity, and a relentless focus on client success, we empower businesses of all sizes to navigate complexity, embrace change, and build sustainable competitive advantage.
                 </p>
               </div>
               
-              <div className="mt-12 p-8 bg-slate-50 rounded-2xl border-l-4 border-accent-gold italic text-xl text-primary-800 font-medium">
-                "Our approach is simple: we listen, we analyze, and we elevate. Every business has a story, and we're here to help you write the most successful chapter yet."
+              <div className="mt-12 p-8 bg-slate-50 rounded-2xl border-l-4 border-accent-gold italic text-base text-primary-800 font-medium">
+                <h4 className="text-lg font-bold mb-2">Founder's Story</h4>
+                <p className="mb-4">Elev8 Consulting Group was founded on a simple belief: businesses don’t struggle because of a lack of ambition—they struggle because of how they operate.</p>
+                <p className="mb-4">After years of leading transformation initiatives across industries, our founder saw a recurring challenge—organisations held back by inefficient processes, disconnected systems, and limited visibility of performance.</p>
+                <p className="mb-4">At the same time, many small and growing businesses lacked access to the structured thinking and transformation capability typically available to large enterprises.</p>
+                <p className="mb-4">Elev8 was created to change that.</p>
+                <p className="mb-4">To bring enterprise-level transformation expertise into a practical, accessible, and results-driven approach—designed specifically for businesses that want to grow, scale, and operate with confidence.</p>
+                <p>Today, Elev8 partners with organisations to cut through complexity, align how they work, and deliver meaningful, measurable outcomes—without unnecessary complexity.</p>
               </div>
             </motion.div>
             
@@ -91,6 +88,111 @@ const About = () => {
         </div>
       </section>
 
+      {/* What We Do & How We're Different Section */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white p-12 rounded-[3rem] shadow-sm border border-slate-100"
+            >
+              <h3 className="text-3xl font-bold text-primary-900 mb-6 font-display">What We Do</h3>
+              <p className="text-slate-600 text-lg leading-relaxed mb-6">
+                We work closely with leadership teams to turn strategy into execution—designing practical, fit-for-purpose solutions that deliver real outcomes.
+              </p>
+              <p className="text-slate-600 text-lg leading-relaxed font-medium">
+                From optimising core processes to implementing intelligent automation and building data-driven capabilities, our focus is simple:<br/>
+                <span className="text-accent-gold font-bold">helping businesses run better, every day.</span>
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white p-12 rounded-[3rem] shadow-sm border border-slate-100"
+            >
+              <h3 className="text-3xl font-bold text-primary-900 mb-6 font-display">How We’re Different</h3>
+              <p className="text-slate-600 text-lg leading-relaxed mb-6">
+                We don’t believe in generic frameworks or over-engineered solutions. Our approach is:
+              </p>
+              <ul className="space-y-4 mb-6">
+                <li className="flex items-start text-slate-700">
+                   <CheckCircle className="text-accent-gold w-6 h-6 mr-3 flex-shrink-0" />
+                   <span><strong>Practical</strong> – focused on what works in the real world</span>
+                </li>
+                <li className="flex items-start text-slate-700">
+                   <CheckCircle className="text-accent-gold w-6 h-6 mr-3 flex-shrink-0" />
+                   <span><strong>Collaborative</strong> – working alongside your team</span>
+                </li>
+                <li className="flex items-start text-slate-700">
+                   <CheckCircle className="text-accent-gold w-6 h-6 mr-3 flex-shrink-0" />
+                   <span><strong>Outcome-driven</strong> – delivering measurable impact, not just recommendations</span>
+                </li>
+              </ul>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                By integrating process, data, and technology, we ensure every solution is aligned, scalable, and built for long-term success.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Expertise & Purpose */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-2 md:order-1 relative p-12 bg-primary-900 rounded-[3rem] text-white shadow-xl"
+            >
+              <div className="absolute top-0 right-0 p-8 opacity-10">
+                 <Zap size={120} />
+              </div>
+              <h3 className="text-3xl font-bold mb-8 font-display relative z-10">Our Expertise</h3>
+              <p className="text-slate-300 text-lg mb-6 relative z-10">Our team brings deep experience across:</p>
+              <ul className="space-y-4 relative z-10">
+                {[
+                  'Business transformation and operating model design',
+                  'Process optimisation and Lean Six Sigma',
+                  'Data, reporting, and performance intelligence',
+                  'AI, automation, and digital enablement',
+                  'Customer experience and service design'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start text-slate-200 text-lg">
+                    <CheckCircle className="text-accent-gold w-5 h-5 mr-3 mt-1 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-1 md:order-2"
+            >
+              <span className="inline-flex w-16 h-16 bg-blue-50 text-blue-600 items-center justify-center rounded-2xl mb-8">
+                <Target size={32} />
+              </span>
+              <h3 className="text-4xl font-bold text-primary-900 mb-6 font-display">Our Purpose</h3>
+              <p className="text-slate-600 text-xl leading-relaxed mb-6 font-medium">
+                We exist to help businesses cut through complexity and build the capability they need to grow with confidence.
+              </p>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                Whether it’s improving efficiency, enabling better decision-making, or preparing for the next stage of growth, we partner with our clients to create lasting impact.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission & Vision */}
       <section className="py-24 bg-slate-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,8 +205,11 @@ const About = () => {
                 <Target className="text-blue-600 w-8 h-8" />
               </div>
               <h3 className="text-3xl font-bold text-primary-900 mb-6 font-display">Our Mission</h3>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                To transform organizations by providing world-class strategic consulting that bridges the gap between current reality and future potential. We aim to be the catalyst for sustainable, long-term growth for every partner we serve.
+              <p className="text-slate-600 text-lg leading-relaxed mb-4">
+                "At Elev8 Consulting Group, our mission is to unlock the full potential of every organisation we partner with. Through bold strategic guidance, innovative solutions, and unwavering expertise, we foster collaboration, integrity, and excellence – helping clients achieve sustainable growth and lasting impact in their industries and communities."
+              </p>
+              <p className="text-slate-600 text-lg leading-relaxed italic">
+                To empower businesses to reach their full potential by aligning strategy, process, data, and technology—delivering practical solutions that drive measurable performance and sustainable growth.
               </p>
             </motion.div>
             
@@ -116,8 +221,11 @@ const About = () => {
                 <Eye className="w-8 h-8" />
               </div>
               <h3 className="text-3xl font-bold mb-6 font-display">Our Vision</h3>
-              <p className="text-slate-300 text-lg leading-relaxed">
-                To become the most trusted global partner for organizational excellence, known for our integrity, innovation, and ability to unlock infinite possibilities for businesses of all scales and industries.
+              <p className="text-slate-300 text-lg leading-relaxed mb-4">
+                "Our vision is to be the trusted catalyst for transformation – recognised as the go-to partner for forward-thinking leaders who want to thrive in a dynamic world. By pushing boundaries, embracing emerging technologies, and delivering inspired results, we help businesses of every size realise their boldest ambitions."
+              </p>
+              <p className="text-slate-300 text-lg leading-relaxed italic">
+                To be the trusted transformation partner for small and growing businesses—enabling them to operate with the capability, clarity, and confidence of high-performing organisations.
               </p>
             </motion.div>
           </div>
@@ -133,7 +241,7 @@ const About = () => {
             description="Our culture is built on a foundation of principles that ensure we deliver exceptional value to our clients every day."
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
             {values.map((value, idx) => (
               <motion.div
                 key={idx}
@@ -141,7 +249,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="text-center p-8 rounded-2xl hover:bg-slate-50 transition-colors"
+                className="text-center p-8 rounded-2xl hover:bg-slate-50 transition-colors w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1rem)]"
               >
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-slate-100 text-primary-900 rounded-full mb-8">
                   <value.icon className="w-10 h-10" />
@@ -151,6 +259,25 @@ const About = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Looking Ahead Section */}
+      <section className="py-24 bg-primary-950 text-white text-center rounded-t-[4rem] relative overflow-hidden mt-10">
+        <div className="absolute inset-0 z-0">
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-gold opacity-10 blur-[200px] rounded-full"></div>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+           <span className="inline-flex w-16 h-16 bg-white/10 items-center justify-center rounded-full mb-8">
+             <Globe className="text-accent-gold w-8 h-8" />
+           </span>
+           <h2 className="text-4xl md:text-5xl font-bold mb-8 font-display">Looking Ahead</h2>
+           <p className="text-xl text-slate-300 leading-relaxed mb-6 font-medium">
+             As technology and AI continue to reshape how businesses operate, our focus remains on helping organisations adapt, evolve, and stay ahead.
+           </p>
+           <p className="text-2xl text-accent-gold leading-relaxed font-bold">
+             Elev8 Consulting Group is your partner in building a smarter, more efficient, and future-ready business.
+           </p>
         </div>
       </section>
     </div>

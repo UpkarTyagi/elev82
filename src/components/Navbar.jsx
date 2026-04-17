@@ -22,7 +22,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
+    { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Success Stories', path: '/case-studies' },
     { name: 'Testimonials', path: '/testimonials' },
@@ -43,7 +43,7 @@ const Navbar = () => {
             <span className={`text-2xl font-bold font-display tracking-tighter ${
               scrolled ? 'text-primary-900' : 'text-primary-900'
             }`}>
-              Elev8<span className="text-accent-gold">.</span>
+              Elev<span className="text-accent-gold">8.</span>
             </span>
           </Link>
 

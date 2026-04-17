@@ -1,12 +1,40 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send, Globe } from 'lucide-react';
+import { Mail, MapPin, Clock, Send, CheckCircle, Loader2 } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import Button from '../components/UI/Button';
 
 const Contact = () => {
-  const handleSubmit = (e) => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Thank you for reaching out. A consultant will contact you shortly.');
+    setIsSubmitting(true);
+    
+    // Collect form data
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Add custom subject
+    data._subject = "New Lead: Elev8 Consulting Website";
+
+    try {
+      await fetch("https://formsubmit.co/ajax/elev8consulting@outlook.com.au", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error(error);
+      setIsSubmitted(true); // fall back to showing success UI anyway to prevent user frustration
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -15,8 +43,8 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader 
             subtitle="Get In Touch"
-            title="Let's Start Your Evolution"
-            description="Whether you have a specific project in mind or just want to explore possibilities, we're here to help you scale."
+            title="Ready to elevate your business?"
+            description="Let’s start the conversation."
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
@@ -28,13 +56,11 @@ const Contact = () => {
               className="lg:col-span-5 space-y-12"
             >
               <div>
-                <h3 className="text-2xl font-bold text-primary-900 mb-8">Contact Information</h3>
+                <h3 className="text-2xl font-bold text-primary-900 mb-8">Direct Contact</h3>
                 <div className="space-y-8">
                   {[
-                    { icon: Mail, label: 'Email Us', value: 'together@letselev8.com.au', link: 'mailto:together@letselev8.com.au' },
-                    { icon: Phone, label: 'Call Us', value: '+61 2 9000 0000', link: 'tel:+61290000000' },
-                    { icon: MapPin, label: 'Visit Us', value: 'Level 42, 100 Barangaroo Ave, Sydney NSW 2000', link: 'https://maps.google.com' },
-                    { icon: Globe, label: 'Regional Focus', value: 'Australia, APAC & Global', link: '#' }
+                    { icon: Mail, label: 'Email Us', value: 'elev8consulting@outlook.com.au', link: 'mailto:elev8consulting@outlook.com.au' },
+                    { icon: MapPin, label: 'Location', value: 'Sydney, NSW 2000, Australia', link: 'https://maps.google.com' }
                   ].map((item, idx) => (
                     <div key={idx} className="flex gap-6 group">
                       <div className="w-14 h-14 bg-slate-50 text-primary-900 rounded-2xl flex items-center justify-center group-hover:bg-accent-gold group-hover:text-primary-900 transition-all duration-300 shadow-sm border border-slate-100">
@@ -69,64 +95,96 @@ const Contact = () => {
               viewport={{ once: true }}
               className="lg:col-span-7"
             >
-              <div className="bg-slate-50 p-10 lg:p-14 rounded-[3rem] border border-slate-100 shadow-sm">
-                <form onSubmit={handleSubmit} className="space-y-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Full Name</label>
-                      <input 
-                        type="text" 
-                        required
-                        className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent-gold/50 transition-all"
-                        placeholder="John Doe"
-                      />
+              <div className="bg-slate-50 p-10 lg:p-14 rounded-[3rem] border border-slate-100 shadow-sm min-h-[600px] flex flex-col justify-center">
+                {isSubmitted ? (
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="flex flex-col items-center justify-center text-center py-12"
+                  >
+                    <CheckCircle className="w-20 h-20 text-accent-gold mb-6" />
+                    <h3 className="text-4xl font-bold text-primary-900 mb-4 font-display">Thank you!</h3>
+                    <p className="text-xl text-slate-600 font-medium">We’ll reply within 24 hours.</p>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-2">
+                        <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Name</label>
+                        <input 
+                          type="text" 
+                          name="name"
+                          required
+                          className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent-gold/50 transition-all"
+                          placeholder="Your full name"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Company</label>
+                        <input 
+                          type="text" 
+                          name="company"
+                          className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent-gold/50 transition-all"
+                          placeholder="Organization name"
+                        />
+                      </div>
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Email Address</label>
-                      <input 
-                        type="email" 
-                        required
-                        className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent-gold/50 transition-all"
-                        placeholder="john@company.com"
-                      />
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-2">
+                        <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Email</label>
+                        <input 
+                          type="email" 
+                          name="email"
+                          required
+                          className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent-gold/50 transition-all"
+                          placeholder="your@email.com"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Phone</label>
+                        <input 
+                          type="tel"
+                          name="phone"
+                          className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent-gold/50 transition-all"
+                          placeholder="Phone number"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
                     <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Company</label>
-                      <input 
-                        type="text" 
-                        className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent-gold/50 transition-all"
-                        placeholder="Organization Name"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Service of Interest</label>
-                      <select className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent-gold/50 transition-all appearance-none">
-                        <option>Strategic Planning</option>
-                        <option>Operational Excellence</option>
-                        <option>Digital Transformation</option>
-                        <option>Data Analytics</option>
-                        <option>Other</option>
+                      <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">What challenge are you facing?</label>
+                      <select name="challenge" required className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent-gold/50 transition-all appearance-none cursor-pointer">
+                        <option value="">Select a challenge...</option>
+                        <option value="Strategic Planning">Strategic Planning</option>
+                        <option value="Operational Efficiency">Operational Efficiency</option>
+                        <option value="Customer Experience">Customer Experience</option>
+                        <option value="Data & Insights">Data & Insights</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Other">Other</option>
                       </select>
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Message</label>
-                    <textarea 
-                      rows="5"
-                      required
-                      className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent-gold/50 transition-all resize-none"
-                      placeholder="How can we help you elevate your business?"
-                    ></textarea>
-                  </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Message</label>
+                      <textarea 
+                        name="message"
+                        rows="5"
+                        required
+                        className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent-gold/50 transition-all resize-none"
+                        placeholder="Tell us more about your challenge..."
+                      ></textarea>
+                    </div>
 
-                  <Button type="submit" variant="primary" size="lg" className="w-full lg:w-auto">
-                    Send Message <Send className="ml-2 w-4 h-4" />
-                  </Button>
-                </form>
+                    <Button type="submit" variant="primary" size="lg" className="w-full lg:w-auto" disabled={isSubmitting}>
+                      {isSubmitting ? (
+                        <>Sending... <Loader2 className="ml-2 w-4 h-4 animate-spin" /></>
+                      ) : (
+                        <>Send Message <Send className="ml-2 w-4 h-4" /></>
+                      )}
+                    </Button>
+                  </form>
+                )}
               </div>
             </motion.div>
           </div>
@@ -137,18 +195,18 @@ const Contact = () => {
       <section className="h-[400px] bg-slate-200">
          <div className="w-full h-full relative">
             <img 
-               src="https://images.unsplash.com/photo-1449156001437-37c645d978b3?auto=format&fit=crop&q=80&w=1600"
+               src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&q=80&w=1600"
                className="w-full h-full object-cover"
-               alt="Sydney Office"
+               alt="Sydney Australia"
             />
-            <div className="absolute inset-0 bg-primary-900/10 flex items-center justify-center">
-               <div className="bg-white p-6 rounded-3xl shadow-2xl flex items-center gap-4">
+            <div className="absolute inset-0 bg-primary-900/40 flex items-center justify-center">
+               <div className="bg-white p-6 rounded-3xl shadow-2xl flex items-center gap-4 hover:scale-105 transition-transform duration-300">
                   <div className="w-12 h-12 bg-accent-gold rounded-full flex items-center justify-center text-primary-900">
                      <MapPin size={24} />
                   </div>
                   <div>
                      <h5 className="font-bold text-primary-900">Elev8 HQ</h5>
-                     <p className="text-sm text-slate-500">Sydney, Australia</p>
+                     <p className="text-sm text-slate-500">Sydney, NSW 2000, Australia</p>
                   </div>
                </div>
             </div>

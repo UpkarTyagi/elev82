@@ -13,11 +13,11 @@ const Footer = () => {
             <Link to="/" className="flex items-center space-x-2">
               <Rocket className="w-8 h-8 text-accent-gold" />
               <span className="text-3xl font-bold font-display tracking-tighter">
-                Elev8<span className="text-accent-gold">.</span>
+                Elev<span className="text-accent-gold">8.</span>
               </span>
             </Link>
             <p className="text-slate-400 leading-relaxed max-w-xs">
-              Endless Possibilities, Infinite Growth. We transform complex business challenges into clear strategic advantages.
+              Unlocking Potential. Driving Infinite Growth.
             </p>
             <div className="flex space-x-4">
               {[Twitter, Linkedin, Instagram].map((Icon, i) => (
@@ -50,7 +50,7 @@ const Footer = () => {
               <li><Link to="/about" className="hover:text-accent-gold transition-colors">About Us</Link></li>
               <li><Link to="/case-studies" className="hover:text-accent-gold transition-colors">Success Stories</Link></li>
               <li><Link to="/testimonials" className="hover:text-accent-gold transition-colors">Testimonials</Link></li>
-              <li><Link to="/contact" className="hover:text-accent-gold transition-colors">Work With Us</Link></li>
+              <li><Link to="/contact" className="hover:text-accent-gold transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -64,7 +64,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-widest text-slate-500 mb-1">Email Us</p>
-                  <a href="mailto:together@letselev8.com.au" className="text-white hover:text-accent-gold transition-colors">together@letselev8.com.au</a>
+                  <a href="mailto:elev8consulting@outlook.com.au" className="text-white hover:text-accent-gold transition-colors">elev8consulting@outlook.com.au</a>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
@@ -73,7 +73,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-widest text-slate-500 mb-1">Our Location</p>
-                  <p className="text-white">Sydney, Australia</p>
+                  <p className="text-white">Sydney, NSW 2000 Australia</p>
                 </div>
               </li>
             </ul>
@@ -83,13 +83,16 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="pt-10 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-sm text-slate-500">
-            © {currentYear} Elev8 Consulting Group. All rights reserved.
+            © 2026 Elev8 Consulting Group. All Rights Reserved.
           </p>
           <div className="flex space-x-8 text-sm text-slate-500">
+            <Link to="#" className="hover:text-white transition-colors">Social Media Links</Link>
             <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link to="#" className="hover:text-white transition-colors">Cookies</Link>
           </div>
+          <p className="text-sm text-slate-500 text-right">
+            Sydney, NSW 2000, Australia
+          </p>
         </div>
       </div>
     </footer>

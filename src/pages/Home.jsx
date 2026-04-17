@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, BarChart3, Users, Zap, Award, CheckCircle2, Star } from 'lucide-react';
+import { ArrowRight, BarChart3, Users, Zap, Award, CheckCircle2, Star, Lightbulb, Activity, MonitorSmartphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/UI/Button';
 import SectionHeader from '../components/SectionHeader';
@@ -7,22 +7,40 @@ import SectionHeader from '../components/SectionHeader';
 const Home = () => {
   const services = [
     {
-      title: 'Strategic Planning',
-      description: 'Define your vision and chart a path to sustainable growth with our expert frameworks.',
+      title: 'Business Transformation & Strategy',
+      description: 'Design and execute future-ready strategies that align your vision, operations, and growth ambitions.',
       icon: BarChart3,
       color: 'bg-blue-100 text-blue-600',
     },
     {
       title: 'Operational Excellence',
-      description: 'Streamline processes and eliminate inefficiencies to maximize your organizational output.',
+      description: 'Streamline processes, eliminate inefficiencies, and unlock capacity using proven Lean Six Sigma principles.',
       icon: Zap,
       color: 'bg-amber-100 text-amber-600',
     },
     {
-      title: 'Digital Transformation',
-      description: 'Leverage cutting-edge technology to modernize your operations and customer experiences.',
-      icon: Award,
+      title: 'AI & Intelligent Automation',
+      description: 'Embed AI and automation into your workflows to reduce manual effort, improve speed, and scale smarter.',
+      icon: Lightbulb,
       color: 'bg-purple-100 text-purple-600',
+    },
+    {
+      title: 'Data & Performance Intelligence',
+      description: 'Transform your data into real-time insights, enabling confident decisions and measurable business performance.',
+      icon: Activity,
+      color: 'bg-emerald-100 text-emerald-600',
+    },
+    {
+      title: 'Customer Experience & Growth',
+      description: 'Optimise customer journeys, improve retention, and drive growth through insight-led experience design.',
+      icon: Users,
+      color: 'bg-pink-100 text-pink-600',
+    },
+    {
+      title: 'Digital & Systems Enablement',
+      description: 'Align your systems with how your business operates—ensuring technology drives efficiency, not complexity.',
+      icon: MonitorSmartphone,
+      color: 'bg-cyan-100 text-cyan-600',
     },
   ];
 
@@ -48,20 +66,23 @@ const Home = () => {
             >
               <div className="inline-flex items-center space-x-2 bg-slate-100 px-4 py-2 rounded-full mb-6">
                 <span className="flex h-2 w-2 rounded-full bg-accent-gold animate-pulse" />
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-600">Elevating Industry Standards</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-600">Welcome to Elev8 Consulting Group</span>
               </div>
               <h1 className="text-5xl lg:text-7xl font-bold leading-[1.1] mb-8 text-primary-900">
-                Transforming Businesses. <span className="text-gradient">Elevating Growth.</span>
+                Unlocking Potential. <br/><span className="text-gradient">Driving Infinite Growth.</span>
               </h1>
-              <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
-                Elev8 Consulting Group provides tailored strategic solutions that drive innovation, optimize operations, and unlock infinite possibilities for your organization.
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed max-w-xl">
+                At Elev8, we partner with ambitious leaders to turn challenges into competitive advantages. In a world of constant change, we deliver tailored strategies that streamline operations, harness cutting-edge technology, and create exceptional customer experiences—so your business doesn’t just survive, it thrives.
+              </p>
+              <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl">
+                Whether you’re a growing startup or an established enterprise, our experts work side-by-side with you to drive measurable results and sustainable success.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="primary" size="lg" onClick={() => window.location.href='/services'}>
-                  Explore Services <ArrowRight className="w-5 h-5 ml-2" />
+                <Button variant="primary" size="md" onClick={() => window.location.href='/contact'}>
+                  Start Your Transformation Journey <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
-                <Button variant="outline" size="lg" onClick={() => window.location.href='/contact'}>
-                  Get Consultation
+                <Button variant="outline" size="md" onClick={() => window.location.href='/services'}>
+                  Explore Our Services
                 </Button>
               </div>
             </motion.div>
@@ -257,16 +278,13 @@ const Home = () => {
           <div className="relative bg-primary-900 rounded-[3rem] overflow-hidden px-10 py-20 lg:p-24 shadow-2xl">
             <div className="absolute top-0 right-0 w-1/3 h-full bg-accent-gold opacity-10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="relative z-10 text-center max-w-3xl mx-auto">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">Ready to Elevate Your Business Potential?</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">Ready to elevate?</h2>
               <p className="text-slate-300 text-xl mb-12">
-                Join hundreds of industry-leading companies that have achieved infinite growth with our strategic guidance.
+                Let’s discuss how we can unlock your organisation’s full potential.
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <div className="flex justify-center">
                 <Button variant="secondary" size="lg" onClick={() => window.location.href='/contact'}>
-                  Schedule Free Consultation
-                </Button>
-                <Button variant="white" size="lg" className="bg-transparent text-white border-2 border-white/20 hover:bg-white/10" onClick={() => window.location.href='/services'}>
-                  Download Service Guide
+                  Book a Free Strategy Session
                 </Button>
               </div>
             </div>

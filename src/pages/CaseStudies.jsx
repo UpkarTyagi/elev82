@@ -1,47 +1,123 @@
 import { motion } from 'framer-motion';
-import { TrendingUp, Users, DollarSign, Clock, ExternalLink } from 'lucide-react';
+import { 
+  TrendingUp, 
+  TrendingDown,
+  Users, 
+  DollarSign, 
+  Clock, 
+  ArrowRight, 
+  Zap, 
+  Search, 
+  ShieldCheck, 
+  BarChart2, 
+  CheckCircle2,
+  RefreshCcw,
+  Settings,
+  Activity
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SectionHeader from '../components/SectionHeader';
 
 const CaseStudies = () => {
   const cases = [
     {
-      company: 'Omni Retail Group',
-      industry: 'Retail & E-commerce',
-      title: 'Digital Supply Chain Transformation',
-      challenge: 'Fragmented supply chain across 12 countries leading to 15% inventory waste.',
-      solution: 'Implemented AI-driven demand forecasting and centralized inventory management system.',
-      result: '22% reduction in operational costs and 100% inventory visibility.',
+      industry: 'Telecommunications',
+      title: 'Assurance Process Transformation',
+      challenge: 'Fragmented processes and inconsistent execution across Assurance functions.',
+      result: 'Standardised end-to-end processes using BPMN 2.0 mapping, Lean Six Sigma (DMAIC), and operating model design to align stakeholders and improve consistency.',
       metrics: [
-        { label: 'Cost Savings', value: '$4.2M', icon: DollarSign },
-        { label: 'Efficiency', value: '+35%', icon: TrendingUp },
+        { label: 'Variation Drop', value: '-40%', icon: Zap },
+        { label: 'Efficiency', value: '+30%', icon: BarChart2 },
       ],
-      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800'
+      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800'
     },
     {
-      company: 'Horizon Health',
-      industry: 'Healthcare Technology',
-      title: 'Customer Experience Re-imagined',
-      challenge: 'Low patient engagement and high turnover in digital platform users.',
-      solution: 'Redesigned patient journey using behavioral science and personalized AI touchpoints.',
-      result: 'NPS grew from +24 to +68 in 14 months. Retention increased by 45%.',
+      industry: 'Renewable Energy',
+      title: 'PMO & Governance Establishment',
+      challenge: 'Lack of structured governance impacting delivery and visibility.',
+      result: 'Established a scalable PMO leveraging Agile delivery frameworks, stage-gate governance, and portfolio reporting dashboards (Power BI).',
       metrics: [
-        { label: 'NPS Growth', value: '+44pts', icon: Users },
-        { label: 'Retention', value: '45%', icon: Clock },
-      ],
-      image: 'https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&q=80&w=800'
-    },
-    {
-      company: 'EcoPower Solutions',
-      industry: 'Energy & Utilities',
-      title: 'Strategic Market Entry - APAC',
-      challenge: 'Difficulty penetrating the APAC market due to regulatory hurdles and local competition.',
-      solution: 'Comprehensive market entry strategy focused on strategic localization and government relations.',
-      result: 'Successful launch in 4 territories within 18 months, exceeding revenue targets by 30%.',
-      metrics: [
-        { label: 'Revenue ROI', value: '3.5x', icon: DollarSign },
-        { label: 'Market Share', value: '12%', icon: TrendingUp },
+        { label: 'Visibility', value: '100%', icon: TrendingUp },
+        { label: 'Speed Delivery', value: '+25%', icon: Clock },
       ],
       image: 'https://images.unsplash.com/photo-1473341304170-96f2a28b9912?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      industry: 'Energy Markets',
+      title: 'Observability & Resilience Transformation',
+      challenge: 'Limited system visibility and fragmented monitoring capabilities.',
+      result: 'Enabled unified observability using MELT framework (Metrics, Events, Logs, Traces), integrating Dynatrace and ELK, and aligning value chain processes.',
+      metrics: [
+        { label: 'Faster Detection', value: '50%', icon: Search },
+        { label: 'Resilience', value: '+35%', icon: ShieldCheck },
+      ],
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      industry: 'Government / Regulatory',
+      title: 'Enterprise Process Standardisation',
+      challenge: 'Inconsistent processes and lack of governance impacting compliance.',
+      result: 'Standardised processes using BPMN 2.0, implemented ISO 9001-aligned governance, and established RACI-based ownership models.',
+      metrics: [
+        { label: 'Process Maturity', value: '+60%', icon: BarChart2 },
+        { label: 'Audit Alignment', value: '100%', icon: CheckCircle2 },
+      ],
+      image: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      industry: 'Energy (Enterprise)',
+      title: 'Process Architecture & Signavio Implementation',
+      challenge: 'Disparate and ungoverned process documentation.',
+      result: 'Implemented SAP Signavio, standardised BPMN frameworks, and introduced a process maturity scorecard.',
+      metrics: [
+        { label: 'Maturity Score', value: '3.6/4', icon: TrendingUp },
+        { label: 'Duplication', value: '-70%', icon: RefreshCcw },
+      ],
+      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      industry: 'Energy Portfolio',
+      title: 'Data Integration & Reporting Automation',
+      challenge: 'Manual data handling and unreliable reporting.',
+      result: 'Delivered data integration using ETL pipelines, unified data models, and built dashboards in Microsoft Power BI for automated reporting.',
+      metrics: [
+        { label: 'Manual Handling', value: '-80%', icon: TrendingDown },
+        { label: 'Sites Integrated', value: '200+', icon: BarChart2 },
+      ],
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      industry: 'Renewable Infrastructure',
+      title: 'Asset Management Function Design',
+      challenge: 'No structured asset management capability.',
+      result: 'Established asset management frameworks aligned to ISO 55001 principles, supported by maintenance planning models and lifecycle optimisation.',
+      metrics: [
+        { label: 'Asset Visibility', value: '90%', icon: Settings },
+        { label: 'Reduced Costs', value: '-45%', icon: DollarSign },
+      ],
+      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      industry: 'Public Sector',
+      title: 'Outcome-Based Performance Reporting',
+      challenge: 'Disconnected and manual reporting processes.',
+      result: 'Aligned processes and reporting using KPI frameworks, data governance models, and outcome-based performance design.',
+      metrics: [
+        { label: 'Reporting', value: 'Auditable', icon: BarChart2 },
+        { label: 'Decisions', value: 'Faster', icon: Activity },
+      ],
+      image: 'https://images.unsplash.com/photo-1577415124269-317420a3206c?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      industry: 'Financial Services',
+      title: 'Customer Onboarding Process Optimisation',
+      challenge: 'Lengthy onboarding cycles, multiple handoffs, and inconsistent customer experience impacting conversion rates.',
+      result: 'Redesigned the onboarding journey using Value Stream Mapping, Lean Six Sigma, and process automation to streamline workflows and remove bottlenecks.',
+      metrics: [
+        { label: 'Faster Onboard', value: '-35%', icon: Zap },
+        { label: 'Conversion Lift', value: '+20%', icon: TrendingUp },
+      ],
+      image: 'https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&q=80&w=800'
     }
   ];
 
@@ -62,45 +138,45 @@ const CaseStudies = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+                transition={{ delay: (idx % 2) * 0.1 }}
                 className="group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl border border-slate-100 transition-all duration-500"
               >
                 <div className="flex flex-col md:flex-row h-full">
-                  <div className="relative w-full md:w-2/5 min-h-[300px] overflow-hidden">
+                  <div className="relative w-full md:w-2/5 min-h-[250px] overflow-hidden">
                     <img 
                       src={project.image} 
-                      alt={project.company} 
+                      alt={project.industry} 
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-primary-900/20" />
                     <div className="absolute top-6 left-6">
                       <span className="bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-xs font-bold text-primary-900 uppercase tracking-widest shadow-lg">
-                        {project.industry}
+                        Case Study
                       </span>
                     </div>
                   </div>
                   
                   <div className="w-full md:w-3/5 p-8 lg:p-10 flex flex-col">
                     <div className="mb-6">
-                      <h4 className="text-accent-gold font-bold text-sm uppercase tracking-widest mb-2">{project.company}</h4>
+                      <h4 className="text-accent-gold font-bold text-sm uppercase tracking-widest mb-2">{project.industry}</h4>
                       <h3 className="text-2xl font-bold text-primary-900 leading-tight mb-4">{project.title}</h3>
                     </div>
 
                     <div className="space-y-4 mb-8 flex-grow">
                       <div>
                         <p className="text-xs uppercase font-bold text-slate-400 mb-1">The Challenge</p>
-                        <p className="text-slate-600 text-sm line-clamp-2">{project.challenge}</p>
+                        <p className="text-slate-600 text-sm line-clamp-3">{project.challenge}</p>
                       </div>
                       <div>
                         <p className="text-xs uppercase font-bold text-slate-400 mb-1">Our Result</p>
-                        <p className="text-primary-900 font-medium text-sm">{project.result}</p>
+                        <p className="text-primary-900 font-medium text-sm line-clamp-4">{project.result}</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4 pt-6 border-t border-slate-50">
                       {project.metrics.map((metric, i) => (
                         <div key={i} className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-slate-50 rounded-xl flex items-center justify-center text-primary-900">
+                          <div className="w-10 h-10 bg-slate-50 rounded-xl flex items-center justify-center text-primary-900 flex-shrink-0">
                              <metric.icon size={20} />
                           </div>
                           <div>
@@ -109,6 +185,12 @@ const CaseStudies = () => {
                           </div>
                         </div>
                       ))}
+                    </div>
+
+                    <div className="mt-8 pt-6 border-t border-slate-50">
+                      <Link to="/contact" className="inline-flex items-center text-primary-900 font-bold text-sm hover:text-accent-gold transition-colors group/cta">
+                        Read the Full Story <ArrowRight className="ml-2 w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
+                      </Link>
                     </div>
                   </div>
                 </div>

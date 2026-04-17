@@ -1,56 +1,50 @@
 import { motion } from 'framer-motion';
-import { Star, Quote, CheckCircle2 } from 'lucide-react';
+import { Star, Quote, CheckCircle2, Building2 } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'Sarah Jenkins',
-      role: 'CEO',
-      company: 'TechFlow Solutions',
-      content: "Elev8 Consulting's strategic approach was refreshing. They didn't just give us a report; they stayed until the results were visible in our bottom line.",
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200'
+      name: 'GM Assurance',
+      role: 'Process Transformation',
+      company: 'Telecom',
+      content: "We engaged Elev8 to support process transformation across Assurance, and the impact was immediate. They brought structure, aligned stakeholders, and helped land clear end-to-end processes without overcomplicating things.",
+      rating: 5
     },
     {
-      name: 'Mark Thompson',
-      role: 'Head of Operations',
-      company: 'Logistics Pro',
-      content: "Working with Elev8 was a turning point for our logistics department. The 30% reduction in lead time was something we couldn't achieve alone for years.",
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200'
+      name: 'Director',
+      role: 'PMO & Asset Management',
+      company: 'Renewable Energy',
+      content: "At a key growth stage, we needed to set up our PMO and asset management properly. The team worked closely with us to put practical processes and governance in place, giving us a strong foundation to scale.",
+      rating: 5
     },
     {
-      name: 'James Wu',
-      role: 'Founder',
-      company: 'HealthSphere',
-      content: "Their expertise in digital transformation is unparalleled. They helped us navigate a complex cloud migration without any downtime or data loss.",
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200'
+      name: 'Director Strategy',
+      role: 'Observability & Process',
+      company: 'AEMO',
+      content: "In a complex environment, having clarity is critical. The team helped align processes and bring everyone onto the same page, particularly around the operating model and telemetry approach.",
+      rating: 5
     },
     {
-      name: 'Elena Rodriguez',
-      role: 'Managing Director',
-      company: 'EcoVibe Australia',
-      content: "The market entry strategy Elev8 developed for us was flawless. We were profitable in the new territory six months ahead of schedule.",
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200'
+      name: 'Head of Capability',
+      role: 'Lean Six Sigma Training',
+      company: 'Safe Work Australia',
+      content: "The training was engaging and easy to apply. Real-world examples made it relevant, and we’ve seen teams start using the tools almost immediately.",
+      rating: 5
     },
     {
-      name: 'Robert Carter',
-      role: 'Director of Finance',
-      company: 'Summit Capital',
-      content: "Data-driven insights from Elev8 allowed us to identify risks that were previously invisible. Their analysis is both deep and actionable.",
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200'
+      name: 'Director, Data & Intelligence',
+      role: 'Process Maturity',
+      company: 'DOE (NSW Gov)',
+      content: "We were looking to bring more consistency to how we manage processes. A clear and practical framework was introduced, improving both visibility and alignment across teams.",
+      rating: 5
     },
     {
-      name: 'Michelle Lee',
-      role: 'Human Resources Lead',
-      company: 'Innovate Corp',
-      content: "The organizational redesign managed by Elev8 improved employee morale and productivity significantly. Highly recommended.",
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200'
+      name: 'Director, Performance',
+      role: 'Business Process Transformation',
+      company: 'DPIE (NSW Gov)',
+      content: "There was a strong focus on getting the fundamentals right—clear processes, aligned reporting, and governance that works. It’s helped drive meaningful improvements across the business.",
+      rating: 5
     }
   ];
 
@@ -64,7 +58,7 @@ const Testimonials = () => {
           <SectionHeader 
             subtitle="Client Trust"
             title="Voices of Success"
-            description="We are proud to have partnered with world-class organizations. Here's what they have to say about our collaborative journey."
+            description="We are proud to have partnered with forward-thinking organizations. Here's what they have to say about our collaborative journey."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -76,7 +70,7 @@ const Testimonials = () => {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="bg-white p-10 rounded-[3rem] shadow-sm hover:shadow-2xl border border-slate-100 transition-all duration-500 relative group"
+                className="bg-white p-10 rounded-[3rem] shadow-sm hover:shadow-2xl border border-slate-100 transition-all duration-500 relative group flex flex-col h-full"
               >
                 <div className="absolute top-10 right-10 opacity-5 group-hover:opacity-10 transition-opacity">
                   <Quote size={80} className="text-primary-900" />
@@ -88,19 +82,18 @@ const Testimonials = () => {
                   ))}
                 </div>
                 
-                <p className="text-slate-600 text-lg italic leading-relaxed mb-8 relative z-10">
+                <p className="text-slate-600 text-lg italic leading-relaxed mb-8 relative z-10 flex-grow">
                   "{item.content}"
                 </p>
                 
-                <div className="flex items-center space-x-4">
-                  <img 
-                    src={item.image} 
-                    alt={item.name} 
-                    className="w-14 h-14 rounded-2xl object-cover ring-2 ring-slate-50"
-                  />
+                <div className="flex items-center space-x-4 mt-auto">
+                  <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-xl border-2 border-slate-50 flex-shrink-0">
+                      <Building2 size={24} />
+                  </div>
                   <div>
-                    <h5 className="font-bold text-primary-900">{item.name}</h5>
-                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">{item.role}, {item.company}</p>
+                    <h5 className="font-bold text-primary-900 leading-snug">{item.name}</h5>
+                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">{item.company}</p>
+                    <p className="text-xs text-slate-500 mt-1">{item.role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -112,11 +105,10 @@ const Testimonials = () => {
       {/* Trust Badges */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.4em] mb-12">Trusted by Businesses Worldwide</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-             {/* Mock SVGs for logos */}
-             {['GLOBAL', 'STRATEGY', 'VENTURE', 'HORIZON', 'SUMMIT'].map((logo) => (
-               <div key={logo} className="text-2xl font-black text-slate-900 tracking-tighter">
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.4em] mb-12">Trusted By Businesses Across Australia</p>
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+             {['NSW Government', 'SafeWork Australia', 'AEMO', 'Apple Pay', 'Telstra', 'NBN Australia'].map((logo) => (
+               <div key={logo} className="text-2xl md:text-3xl font-black text-slate-900 tracking-tighter">
                  {logo}<span className="text-accent-gold">.</span>
                </div>
              ))}
@@ -151,11 +143,15 @@ const Testimonials = () => {
                 </div>
                 <div className="relative">
                   <div className="aspect-square bg-white/5 rounded-[3rem] border border-white/10 flex items-center justify-center text-center p-12">
-                    <div>
-                      <div className="text-7xl font-bold text-accent-gold mb-4">98%</div>
-                      <div className="text-xl font-bold uppercase tracking-widest text-slate-400">Client Retention</div>
-                      <p className="mt-6 text-sm text-slate-500 max-w-xs mx-auto">Our clients return to us for their second, third, and fourth phases of growth.</p>
-                    </div>
+                     <div>
+                       <div className="inline-flex w-24 h-24 bg-white/10 rounded-full items-center justify-center mb-6">
+                         <Star className="w-12 h-12 fill-accent-gold text-accent-gold" />
+                       </div>
+                       <div className="text-2xl font-bold uppercase tracking-widest text-slate-300">Trusted Partners</div>
+                       <p className="mt-4 text-sm text-slate-400 max-w-xs mx-auto">
+                         Delivering impact, clarity, and sustainable methodology across public and private sectors.
+                       </p>
+                     </div>
                   </div>
                 </div>
              </div>
