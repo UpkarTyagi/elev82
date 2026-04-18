@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2 group">
             <div className="bg-primary-900 p-2 rounded-lg group-hover:bg-accent-gold transition-colors duration-300">
-              <Rocket className="w-6 h-6 text-white" />
+              <Rocket className="w-6 h-6 text-accent-gold group-hover:text-primary-900" />
             </div>
             <span className={`text-2xl font-bold font-display tracking-tighter ${
               scrolled ? 'text-primary-900' : 'text-primary-900'

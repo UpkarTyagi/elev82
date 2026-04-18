@@ -4,51 +4,56 @@ import { Link } from 'react-router-dom';
 import Button from '../components/UI/Button';
 import SectionHeader from '../components/SectionHeader';
 
+import heroImg from '../assets/img/business-people-meeting-office.jpg';
+import collabImg from '../assets/img/friendly-partners-handshaking-group-meeting-thanking-successful-teamwork.jpg';
+import resultsImg from '../assets/img/campaign-creators-gMsnXqILjp4-unsplash.jpg';
+import clientImg from '../assets/img/pexels-edmond-dantes-4344860.jpg';
+
 const Home = () => {
   const services = [
     {
       title: 'Business Transformation & Strategy',
       description: 'Design and execute future-ready strategies that align your vision, operations, and growth ambitions.',
       icon: BarChart3,
-      color: 'bg-blue-100 text-blue-600',
+      color: 'bg-primary-900 text-accent-gold',
     },
     {
       title: 'Operational Excellence',
       description: 'Streamline processes, eliminate inefficiencies, and unlock capacity using proven Lean Six Sigma principles.',
       icon: Zap,
-      color: 'bg-amber-100 text-amber-600',
+      color: 'bg-primary-900 text-accent-gold',
     },
     {
       title: 'AI & Intelligent Automation',
       description: 'Embed AI and automation into your workflows to reduce manual effort, improve speed, and scale smarter.',
       icon: Lightbulb,
-      color: 'bg-purple-100 text-purple-600',
+      color: 'bg-primary-900 text-accent-gold',
     },
     {
       title: 'Data & Performance Intelligence',
       description: 'Transform your data into real-time insights, enabling confident decisions and measurable business performance.',
       icon: Activity,
-      color: 'bg-emerald-100 text-emerald-600',
+      color: 'bg-primary-900 text-accent-gold',
     },
     {
       title: 'Customer Experience & Growth',
       description: 'Optimise customer journeys, improve retention, and drive growth through insight-led experience design.',
       icon: Users,
-      color: 'bg-pink-100 text-pink-600',
+      color: 'bg-primary-900 text-accent-gold',
     },
     {
       title: 'Digital & Systems Enablement',
       description: 'Align your systems with how your business operates—ensuring technology drives efficiency, not complexity.',
       icon: MonitorSmartphone,
-      color: 'bg-cyan-100 text-cyan-600',
+      color: 'bg-primary-900 text-accent-gold',
     },
   ];
 
   const stats = [
-    { label: 'Growth Delivered', value: '150%', suffix: '+' },
+    { label: 'Growth Delivered', value: '150', suffix: '%' },
     { label: 'Client Satisfaction', value: '98', suffix: '%' },
-    { label: 'Years Experience', value: '15', suffix: 'Y' },
-    { label: 'Global Clients', value: '200', suffix: '+' },
+    { label: 'On-Time Delivery', value: '95', suffix: '%' },
+    { label: 'Productivity Increase', value: '2', suffix: 'x' },
   ];
 
   return (
@@ -58,7 +63,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-50 via-white to-white -z-10" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -95,8 +100,9 @@ const Home = () => {
             >
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000" 
+                  src={heroImg} 
                   alt="Business Meeting" 
+                  loading="lazy"
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 bg-primary-900/10" />
@@ -105,14 +111,14 @@ const Home = () => {
               <motion.div 
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-10 -left-10 bg-white p-6 rounded-xl shadow-2xl z-20 flex items-center space-x-4 max-w-xs border border-slate-100"
+                className="absolute -bottom-10 left-0 bg-white p-6 rounded-xl shadow-2xl z-20 flex items-center space-x-4 max-w-xs border border-slate-100"
               >
-                <div className="bg-green-100 p-3 rounded-full">
-                  <CheckCircle2 className="text-green-600 w-8 h-8" />
+                <div className="bg-primary-900 p-3 rounded-full">
+                  <CheckCircle2 className="text-accent-gold w-8 h-8" />
                 </div>
                 <div>
                   <h4 className="font-bold text-primary-900">Project Complete</h4>
-                  <p className="text-sm text-slate-500">100% Client Satisfaction</p>
+                  <p className="text-sm text-slate-500">98% Client Satisfaction</p>
                 </div>
               </motion.div>
               <motion.div 
@@ -125,7 +131,7 @@ const Home = () => {
                 </div>
                 <div>
                   <h4 className="font-bold">Expert Team</h4>
-                  <p className="text-sm text-slate-300">50+ Senior Consultants</p>
+                  <p className="text-sm text-slate-300">Proven Delivery</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -140,19 +146,21 @@ const Home = () => {
             <div className="order-2 lg:order-1 relative">
               <div className="grid grid-cols-2 gap-4">
                 <img 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600" 
+                  src={collabImg} 
                   className="rounded-2xl shadow-lg mt-8 h-64 object-cover" 
+                  loading="lazy"
                   alt="Collaboration"
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600" 
+                  src={resultsImg} 
                   className="rounded-2xl shadow-lg h-64 object-cover" 
+                  loading="lazy"
                   alt="Results"
                 />
               </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-gold text-primary-900 p-8 rounded-2xl shadow-2xl border-4 border-white text-center">
-                <span className="block text-4xl font-bold mb-1">15+</span>
-                <span className="text-sm font-bold uppercase tracking-widest">Years of Excellence</span>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 bg-accent-gold text-primary-900 p-6 rounded-2xl shadow-2xl border-4 border-white text-center">
+                <span className="block text-xl md:text-2xl font-bold mb-1">Decades of</span>
+                <span className="text-xs lg:text-sm font-bold uppercase tracking-widest">combined consulting expertise</span>
               </div>
             </div>
             <div className="order-1 lg:order-2">
@@ -258,8 +266,9 @@ const Home = () => {
               </blockquote>
               <div className="flex items-center justify-center space-x-4">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" 
+                  src={clientImg} 
                   className="w-16 h-16 rounded-full object-cover ring-4 ring-white"
+                  loading="lazy"
                   alt="Client"
                 />
                 <div className="text-left">

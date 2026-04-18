@@ -24,9 +24,9 @@ const Footer = () => {
                 <a 
                   key={i} 
                   href="#" 
-                  className="w-10 h-10 rounded-full border border-slate-800 flex items-center justify-center hover:bg-accent-gold hover:border-accent-gold transition-all group"
+                  className="w-10 h-10 rounded-full border border-slate-800 bg-primary-900 flex items-center justify-center hover:bg-accent-gold hover:border-accent-gold transition-all group"
                 >
-                  <Icon className="w-5 h-5 group-hover:text-primary-900 transition-colors" />
+                  <Icon className="w-5 h-5 text-accent-gold group-hover:text-primary-900 transition-colors" />
                 </a>
               ))}
             </div>
@@ -59,7 +59,7 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-8 font-display">Contact Details</h4>
             <ul className="space-y-6 text-slate-400">
               <li className="flex items-start space-x-3">
-                <div className="p-2 rounded bg-slate-900">
+                <div className="p-2 rounded bg-primary-900">
                   <Mail className="w-5 h-5 text-accent-gold" />
                 </div>
                 <div>
@@ -68,7 +68,7 @@ const Footer = () => {
                 </div>
               </li>
               <li className="flex items-start space-x-3">
-                <div className="p-2 rounded bg-slate-900">
+                <div className="p-2 rounded bg-primary-900">
                   <MapPin className="w-5 h-5 text-accent-gold" />
                 </div>
                 <div>

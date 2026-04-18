@@ -150,16 +150,7 @@ const Services = () => {
   ];
 
   const getColorClasses = (color) => {
-    const sets = {
-      blue: 'bg-blue-50 text-blue-600 border-blue-100',
-      amber: 'bg-amber-50 text-amber-600 border-amber-100',
-      emerald: 'bg-emerald-50 text-emerald-600 border-emerald-100',
-      rose: 'bg-rose-50 text-rose-600 border-rose-100',
-      indigo: 'bg-indigo-50 text-indigo-600 border-indigo-100',
-      cyan: 'bg-cyan-50 text-cyan-600 border-cyan-100',
-      purple: 'bg-purple-50 text-purple-600 border-purple-100',
-    };
-    return sets[color] || sets.blue;
+    return 'bg-primary-900 text-accent-gold border-primary-800';
   };
 
   return (

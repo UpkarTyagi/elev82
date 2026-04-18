@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, MapPin, Clock, Send, CheckCircle, Loader2 } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import Button from '../components/UI/Button';
+import contactImg from '../assets/img/dylan-gillis-KdeqA3aTnBY-unsplash.jpg';
 
 const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -63,7 +64,7 @@ const Contact = () => {
                     { icon: MapPin, label: 'Location', value: 'Sydney, NSW 2000, Australia', link: 'https://maps.google.com' }
                   ].map((item, idx) => (
                     <div key={idx} className="flex gap-6 group">
-                      <div className="w-14 h-14 bg-slate-50 text-primary-900 rounded-2xl flex items-center justify-center group-hover:bg-accent-gold group-hover:text-primary-900 transition-all duration-300 shadow-sm border border-slate-100">
+                      <div className="w-14 h-14 bg-primary-900 text-accent-gold rounded-2xl flex items-center justify-center group-hover:bg-accent-gold group-hover:text-primary-900 transition-all duration-300 shadow-sm border border-primary-800">
                         <item.icon size={24} />
                       </div>
                       <div>
@@ -195,13 +196,14 @@ const Contact = () => {
       <section className="h-[400px] bg-slate-200">
          <div className="w-full h-full relative">
             <img 
-               src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&q=80&w=1600"
+               src={contactImg}
                className="w-full h-full object-cover"
-               alt="Sydney Australia"
+               loading="lazy"
+               alt="Elev8 HQ"
             />
             <div className="absolute inset-0 bg-primary-900/40 flex items-center justify-center">
                <div className="bg-white p-6 rounded-3xl shadow-2xl flex items-center gap-4 hover:scale-105 transition-transform duration-300">
-                  <div className="w-12 h-12 bg-accent-gold rounded-full flex items-center justify-center text-primary-900">
+                  <div className="w-12 h-12 bg-primary-900 rounded-full flex items-center justify-center text-accent-gold shadow-sm">
                      <MapPin size={24} />
                   </div>
                   <div>

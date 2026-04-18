@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, ShieldCheck, Users, Globe, Lightbulb, Star, Zap, TrendingUp, CheckCircle } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
+import aboutStoryImg from '../assets/img/two-male-colleagues-office-standing-with-laptop.jpg';
 
 const About = () => {
   const values = [
@@ -28,12 +29,6 @@ const About = () => {
           >
             <span className="inline-block text-accent-gold font-bold uppercase tracking-[0.4em] text-xs mb-6">Our Legacy</span>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">Transforming How Businesses<br />Operate, Grow, and Scale</h1>
-            <p className="max-w-2xl mx-auto text-xl text-slate-300 leading-relaxed mb-4">
-              Elev8 Consulting Group is a Sydney-based transformation partner helping small and growing businesses operate smarter, move faster, and scale with confidence.
-            </p>
-            <p className="max-w-2xl mx-auto text-xl text-slate-300 leading-relaxed">
-              We combine process excellence, data intelligence, and AI-enabled solutions to simplify operations, improve performance, and future-proof the way organisations work.
-            </p>
           </motion.div>
         </div>
       </section>
@@ -78,8 +73,9 @@ const About = () => {
               viewport={{ once: true }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1000" 
-                alt="Our Leadership" 
+                src={aboutStoryImg} 
+                alt="Challenges turn to Opportunities" 
+                loading="lazy"
                 className="rounded-[2.5rem] shadow-2xl relative z-10"
               />
               <div className="absolute -bottom-10 -left-10 w-full h-full border-2 border-slate-100 rounded-[2.5rem] -z-10" />
@@ -141,57 +137,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Expertise & Purpose */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="order-2 md:order-1 relative p-12 bg-primary-900 rounded-[3rem] text-white shadow-xl"
-            >
-              <div className="absolute top-0 right-0 p-8 opacity-10">
-                 <Zap size={120} />
-              </div>
-              <h3 className="text-3xl font-bold mb-8 font-display relative z-10">Our Expertise</h3>
-              <p className="text-slate-300 text-lg mb-6 relative z-10">Our team brings deep experience across:</p>
-              <ul className="space-y-4 relative z-10">
-                {[
-                  'Business transformation and operating model design',
-                  'Process optimisation and Lean Six Sigma',
-                  'Data, reporting, and performance intelligence',
-                  'AI, automation, and digital enablement',
-                  'Customer experience and service design'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start text-slate-200 text-lg">
-                    <CheckCircle className="text-accent-gold w-5 h-5 mr-3 mt-1 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="order-1 md:order-2"
-            >
-              <span className="inline-flex w-16 h-16 bg-blue-50 text-blue-600 items-center justify-center rounded-2xl mb-8">
-                <Target size={32} />
-              </span>
-              <h3 className="text-4xl font-bold text-primary-900 mb-6 font-display">Our Purpose</h3>
-              <p className="text-slate-600 text-xl leading-relaxed mb-6 font-medium">
-                We exist to help businesses cut through complexity and build the capability they need to grow with confidence.
-              </p>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                Whether it’s improving efficiency, enabling better decision-making, or preparing for the next stage of growth, we partner with our clients to create lasting impact.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Mission & Vision */}
       <section className="py-24 bg-slate-50 overflow-hidden">
@@ -201,8 +147,8 @@ const About = () => {
               whileHover={{ y: -10 }}
               className="bg-white p-12 rounded-[3rem] shadow-sm border border-slate-100"
             >
-              <div className="w-16 h-16 bg-blue-50 flex items-center justify-center rounded-2xl mb-8">
-                <Target className="text-blue-600 w-8 h-8" />
+              <div className="w-16 h-16 bg-primary-900 flex items-center justify-center rounded-2xl mb-8 shadow-sm">
+                <Target className="text-accent-gold w-8 h-8" />
               </div>
               <h3 className="text-3xl font-bold text-primary-900 mb-6 font-display">Our Mission</h3>
               <p className="text-slate-600 text-lg leading-relaxed mb-4">
@@ -241,7 +187,7 @@ const About = () => {
             description="Our culture is built on a foundation of principles that ensure we deliver exceptional value to our clients every day."
           />
           
-          <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
             {values.map((value, idx) => (
               <motion.div
                 key={idx}
@@ -249,13 +195,13 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="text-center p-8 rounded-2xl hover:bg-slate-50 transition-colors w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1rem)]"
+                className="text-center p-6 rounded-2xl hover:bg-slate-50 transition-colors"
               >
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-slate-100 text-primary-900 rounded-full mb-8">
-                  <value.icon className="w-10 h-10" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-900 text-accent-gold rounded-full mb-6 shadow-sm">
+                  <value.icon className="w-8 h-8" />
                 </div>
-                <h4 className="text-xl font-bold mb-4 text-primary-900">{value.title}</h4>
-                <p className="text-slate-500">{value.description}</p>
+                <h4 className="text-lg font-bold mb-3 text-primary-900">{value.title}</h4>
+                <p className="text-sm text-slate-500">{value.description}</p>
               </motion.div>
             ))}
           </div>

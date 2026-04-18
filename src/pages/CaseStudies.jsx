@@ -18,6 +18,15 @@ import {
 import { Link } from 'react-router-dom';
 import SectionHeader from '../components/SectionHeader';
 
+import cs1 from '../assets/img/austin-distel-_S7-KX8geL0-unsplash.jpg';
+import cs2 from '../assets/img/austin-distel-jpHw8ndwJ_Q-unsplash.jpg';
+import cs3 from '../assets/img/austin-distel-wD1LRb9OeEo-unsplash.jpg';
+import cs4 from '../assets/img/evangeline-shaw-VLkoOabAxqw-unsplash.jpg';
+import cs5 from '../assets/img/linkedin-sales-solutions-46bom4lObsA-unsplash.jpg';
+import cs6 from '../assets/img/pexels-mizunokozuki-12902907.jpg';
+import cs7 from '../assets/img/pexels-mizunokozuki-12903148.jpg';
+import cs8 from '../assets/img/sebastian-herrmann-O2o1hzDA7iE-unsplash.jpg';
+
 const CaseStudies = () => {
   const cases = [
     {
@@ -29,7 +38,7 @@ const CaseStudies = () => {
         { label: 'Variation Drop', value: '-40%', icon: Zap },
         { label: 'Efficiency', value: '+30%', icon: BarChart2 },
       ],
-      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800'
+      image: cs1
     },
     {
       industry: 'Renewable Energy',
@@ -40,7 +49,7 @@ const CaseStudies = () => {
         { label: 'Visibility', value: '100%', icon: TrendingUp },
         { label: 'Speed Delivery', value: '+25%', icon: Clock },
       ],
-      image: 'https://images.unsplash.com/photo-1473341304170-96f2a28b9912?auto=format&fit=crop&q=80&w=800'
+      image: cs2
     },
     {
       industry: 'Energy Markets',
@@ -51,7 +60,7 @@ const CaseStudies = () => {
         { label: 'Faster Detection', value: '50%', icon: Search },
         { label: 'Resilience', value: '+35%', icon: ShieldCheck },
       ],
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800'
+      image: cs3
     },
     {
       industry: 'Government / Regulatory',
@@ -62,7 +71,7 @@ const CaseStudies = () => {
         { label: 'Process Maturity', value: '+60%', icon: BarChart2 },
         { label: 'Audit Alignment', value: '100%', icon: CheckCircle2 },
       ],
-      image: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=800'
+      image: cs4
     },
     {
       industry: 'Energy (Enterprise)',
@@ -73,7 +82,7 @@ const CaseStudies = () => {
         { label: 'Maturity Score', value: '3.6/4', icon: TrendingUp },
         { label: 'Duplication', value: '-70%', icon: RefreshCcw },
       ],
-      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=800'
+      image: cs5
     },
     {
       industry: 'Energy Portfolio',
@@ -84,7 +93,7 @@ const CaseStudies = () => {
         { label: 'Manual Handling', value: '-80%', icon: TrendingDown },
         { label: 'Sites Integrated', value: '200+', icon: BarChart2 },
       ],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800'
+      image: cs6
     },
     {
       industry: 'Renewable Infrastructure',
@@ -95,7 +104,7 @@ const CaseStudies = () => {
         { label: 'Asset Visibility', value: '90%', icon: Settings },
         { label: 'Reduced Costs', value: '-45%', icon: DollarSign },
       ],
-      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=800'
+      image: cs7
     },
     {
       industry: 'Public Sector',
@@ -106,18 +115,7 @@ const CaseStudies = () => {
         { label: 'Reporting', value: 'Auditable', icon: BarChart2 },
         { label: 'Decisions', value: 'Faster', icon: Activity },
       ],
-      image: 'https://images.unsplash.com/photo-1577415124269-317420a3206c?auto=format&fit=crop&q=80&w=800'
-    },
-    {
-      industry: 'Financial Services',
-      title: 'Customer Onboarding Process Optimisation',
-      challenge: 'Lengthy onboarding cycles, multiple handoffs, and inconsistent customer experience impacting conversion rates.',
-      result: 'Redesigned the onboarding journey using Value Stream Mapping, Lean Six Sigma, and process automation to streamline workflows and remove bottlenecks.',
-      metrics: [
-        { label: 'Faster Onboard', value: '-35%', icon: Zap },
-        { label: 'Conversion Lift', value: '+20%', icon: TrendingUp },
-      ],
-      image: 'https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&q=80&w=800'
+      image: cs8
     }
   ];
 
@@ -146,6 +144,7 @@ const CaseStudies = () => {
                     <img 
                       src={project.image} 
                       alt={project.industry} 
+                      loading="lazy"
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-primary-900/20" />
@@ -176,7 +175,7 @@ const CaseStudies = () => {
                     <div className="grid grid-cols-2 gap-4 pt-6 border-t border-slate-50">
                       {project.metrics.map((metric, i) => (
                         <div key={i} className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-slate-50 rounded-xl flex items-center justify-center text-primary-900 flex-shrink-0">
+                          <div className="w-10 h-10 bg-primary-900 rounded-xl flex items-center justify-center text-accent-gold flex-shrink-0 shadow-sm">
                              <metric.icon size={20} />
                           </div>
                           <div>
@@ -203,7 +202,7 @@ const CaseStudies = () => {
       {/* Trust Quote */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-accent-gold/10 rounded-full mb-10 text-accent-gold">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-900 rounded-full mb-10 text-accent-gold shadow-lg">
             <Users size={40} />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-primary-900 mb-10 leading-tight">"Strategic excellence is not an act, but a habit. We've made it our habit to excel."</h2>
