@@ -195,9 +195,11 @@ const Services = () => {
               <Button variant="primary" size="lg" onClick={() => document.getElementById('our-services').scrollIntoView({ behavior: 'smooth' })}>
                 Explore Our Services
               </Button>
-              <Button variant="outline" size="lg" onClick={() => window.location.href='/contact'}>
-                Book a Consultation
-              </Button>
+              <Link to="/contact">
+                <Button variant="outline" size="lg">
+                  Book a Consultation
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -361,12 +363,16 @@ const Services = () => {
             Let’s build a smarter, more efficient, and future-ready organisation—together.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button variant="secondary" size="lg" onClick={() => window.location.href='/contact'}>
-              Get In Touch
-            </Button>
-            <Button variant="white" size="lg" className="bg-transparent text-white border-2 border-white/20 hover:bg-white/10" onClick={() => window.location.href='/contact'}>
-              Book a Consultation
-            </Button>
+            <Link to="/contact">
+              <Button variant="secondary" size="lg">
+                Get In Touch
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button variant="white" size="lg" className="bg-transparent text-white border-2 border-white/20 hover:bg-white/10">
+                Book a Consultation
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

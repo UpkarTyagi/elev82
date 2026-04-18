@@ -83,12 +83,16 @@ const Home = () => {
                 Whether you’re a growing startup or an established enterprise, our experts work side-by-side with you to drive measurable results and sustainable success.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="primary" size="md" onClick={() => window.location.href='/contact'}>
-                  Start Your Transformation Journey <ArrowRight className="w-4 h-4 ml-1" />
-                </Button>
-                <Button variant="outline" size="md" onClick={() => window.location.href='/services'}>
-                  Explore Our Services
-                </Button>
+                <Link to="/contact">
+                  <Button variant="primary" size="md">
+                    Start Your Transformation Journey <ArrowRight className="w-4 h-4 ml-1" />
+                  </Button>
+                </Link>
+                <Link to="/services">
+                  <Button variant="outline" size="md">
+                    Explore Our Services
+                  </Button>
+                </Link>
               </div>
             </motion.div>
 
@@ -292,9 +296,11 @@ const Home = () => {
                 Let’s discuss how we can unlock your organisation’s full potential.
               </p>
               <div className="flex justify-center">
-                <Button variant="secondary" size="lg" onClick={() => window.location.href='/contact'}>
-                  Book a Free Strategy Session
-                </Button>
+                <Link to="/contact">
+                  <Button variant="secondary" size="lg">
+                    Book a Free Strategy Session
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
