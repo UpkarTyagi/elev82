@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Rocket, Mail, MapPin, Instagram, Linkedin, Twitter, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, Instagram, Linkedin, Twitter, ArrowUpRight } from 'lucide-react';
+import logoImg from '../assets/img/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,11 +11,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand section */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center space-x-2">
-              <Rocket className="w-8 h-8 text-accent-gold" />
-              <span className="text-3xl font-bold font-display tracking-tighter">
-                Elev<span className="text-accent-gold">8.</span>
-              </span>
+            <Link to="/" className="flex items-center">
+              <img 
+                src={logoImg} 
+                alt="Elev8 Consulting Group" 
+                className="h-16 md:h-20 w-auto object-contain brightness-0 invert" 
+              />
             </Link>
             <p className="text-slate-400 leading-relaxed max-w-xs">
               Unlocking Potential. Driving Infinite Growth.

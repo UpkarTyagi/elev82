@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Rocket } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logoImg from '../assets/img/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,15 +37,12 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="bg-primary-900 p-2 rounded-lg group-hover:bg-accent-gold transition-colors duration-300">
-              <Rocket className="w-6 h-6 text-accent-gold group-hover:text-primary-900" />
-            </div>
-            <span className={`text-2xl font-bold font-display tracking-tighter ${
-              scrolled ? 'text-primary-900' : 'text-primary-900'
-            }`}>
-              Elev<span className="text-accent-gold">8.</span>
-            </span>
+          <Link to="/" className="flex items-center group">
+            <img 
+              src={logoImg} 
+              alt="Elev8 Consulting Group" 
+              className="h-12 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+            />
           </Link>
 
           {/* Desktop Nav */}

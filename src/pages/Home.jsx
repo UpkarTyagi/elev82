@@ -59,99 +59,175 @@ const Home = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-50 via-white to-white -z-10" />
+      <section className="relative min-h-screen flex items-center pt-24 overflow-hidden">
+        {/* Dynamic Background Elements */}
+        <div className="absolute inset-0 bg-slate-50 -z-30" />
+        <div className="absolute inset-0 -z-20 overflow-hidden">
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              x: [0, 50, 0],
+              y: [0, 30, 0]
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-[10%] -right-[10%] w-[600px] h-[600px] bg-accent-blue/10 rounded-full blur-[120px]" 
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.1, 1],
+              x: [0, -30, 0],
+              y: [0, 50, 0]
+            }}
+            transition={{ duration: 12, repeat: Infinity, ease: "linear", delay: 1 }}
+            className="absolute top-[20%] -left-[10%] w-[500px] h-[500px] bg-accent-gold/10 rounded-full blur-[100px]" 
+          />
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent" />
+        </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-0 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center space-x-2 bg-slate-100 px-4 py-2 rounded-full mb-6">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
+                className="inline-flex items-center space-x-2 bg-primary-900/5 backdrop-blur-sm border border-primary-900/10 px-4 py-2 rounded-full mb-8 shadow-sm"
+              >
                 <span className="flex h-2 w-2 rounded-full bg-accent-gold animate-pulse" />
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-600">Welcome to Elev8 Consulting Group</span>
-              </div>
-              <h1 className="text-5xl lg:text-7xl font-bold leading-[1.1] mb-8 text-primary-900">
-                Unlocking Potential. <br/><span className="text-gradient">Driving Infinite Growth.</span>
+                <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-primary-900/70">Transformation Partners</span>
+              </motion.div>
+              
+              <h1 className="text-5xl lg:text-7xl xl:text-8xl font-black leading-[1.05] mb-8 text-primary-900 tracking-tighter">
+                Unlocking <br/>
+                <span className="relative">
+                  <span className="relative z-10">Potential.</span>
+                  <motion.div 
+                    initial={{ width: 0 }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                    className="absolute bottom-2 left-0 h-3 md:h-5 bg-accent-gold/30 -z-10"
+                  />
+                </span>
+                <br/>
+                <span className="text-gradient">Infinite Growth.</span>
               </h1>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed max-w-xl">
-                At Elev8, we partner with ambitious leaders to turn challenges into competitive advantages. In a world of constant change, we deliver tailored strategies that streamline operations, harness cutting-edge technology, and create exceptional customer experiences—so your business doesn’t just survive, it thrives.
+              
+              <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl font-medium">
+                We partner with ambitious leaders to turn complexity into <span className="text-primary-900 font-bold border-b-2 border-accent-gold">clarity</span>. Elev8 Consulting delivers enterprise-level strategy and AI-driven transformation for businesses ready to scale.
               </p>
-              <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl">
-                Whether you’re a growing startup or an established enterprise, our experts work side-by-side with you to drive measurable results and sustainable success.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              
+              <div className="flex flex-col sm:flex-row gap-5">
                 <Link to="/contact">
-                  <Button variant="primary" size="md">
-                    Start Your Transformation Journey <ArrowRight className="w-4 h-4 ml-1" />
-                  </Button>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                    <Button variant="primary" size="lg" className="w-full sm:w-auto shadow-xl shadow-primary-900/20">
+                      Start Transformation <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                  </motion.div>
                 </Link>
                 <Link to="/services">
-                  <Button variant="outline" size="md">
-                    Explore Our Services
-                  </Button>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                    <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                      Our Expertise
+                    </Button>
+                  </motion.div>
                 </Link>
               </div>
+
+              {/* Trust Badge */}
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1 }}
+                className="mt-12 flex items-center space-x-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+              >
+                <span className="text-xs font-bold uppercase tracking-widest text-primary-900/50 block">Strategic Excellence in</span>
+                <div className="flex space-x-4">
+                  <Zap size={20} className="text-primary-900" />
+                  <Award size={20} className="text-primary-900" />
+                  <Users size={20} className="text-primary-900" />
+                </div>
+              </motion.div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="relative hidden lg:block"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="relative lg:-mt-12"
             >
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src={heroImg} 
-                  alt="Business Meeting" 
-                  loading="lazy"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-primary-900/10" />
+              {/* Main Image Composition */}
+              <div className="relative z-10 p-4">
+                <div className="relative bg-white p-3 rounded-[2.5rem] shadow-2xl overflow-hidden group">
+                  <motion.div
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.6 }}
+                    className="relative rounded-[2rem] overflow-hidden"
+                  >
+                    <img 
+                      src={heroImg} 
+                      alt="Elev8 Business Leadership" 
+                      className="w-full aspect-[4/5] lg:aspect-square object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-900/40 via-transparent to-transparent opacity-60" />
+                  </motion.div>
+                </div>
+
+                {/* Decorative Elements */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-accent-gold/20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent-blue/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+                
+                {/* Floating Metric Card 1 */}
+                <motion.div 
+                  animate={{ y: [0, -20, 0], rotate: [0, 2, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -top-6 -right-6 lg:-right-12 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-2xl border border-white/50 z-20 flex items-center space-x-4 max-w-[200px]"
+                >
+                  <div className="h-10 w-10 flex items-center justify-center bg-accent-gold text-primary-900 rounded-lg shadow-inner">
+                    <Activity className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-black text-primary-900/40 uppercase tracking-tighter">Growth Rate</div>
+                    <div className="text-xl font-black text-primary-900">+150%</div>
+                  </div>
+                </motion.div>
+
+                {/* Floating Metric Card 2 */}
+                <motion.div 
+                  animate={{ y: [0, 20, 0], rotate: [0, -2, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute -bottom-10 left-0 lg:-left-8 bg-white p-5 rounded-2xl shadow-2xl z-20 border border-slate-100 flex items-center space-x-4 min-w-[220px]"
+                >
+                  <div className="bg-primary-900 p-3 rounded-xl shadow-inner">
+                    <CheckCircle2 className="text-accent-gold w-6 h-6" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-black text-primary-900 mb-0.5">Project Complete</div>
+                    <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">98% Client Satisfaction</div>
+                  </div>
+                </motion.div>
               </div>
-              {/* Floating Cards */}
-              <motion.div 
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-10 left-0 bg-white p-6 rounded-xl shadow-2xl z-20 flex items-center space-x-4 max-w-xs border border-slate-100"
-              >
-                <div className="bg-primary-900 p-3 rounded-full">
-                  <CheckCircle2 className="text-accent-gold w-8 h-8" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-primary-900">Project Complete</h4>
-                  <p className="text-sm text-slate-500">98% Client Satisfaction</p>
-                </div>
-              </motion.div>
-              <motion.div 
-                animate={{ y: [0, 15, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -top-10 -right-10 bg-primary-900 text-white p-6 rounded-xl shadow-2xl z-20 flex items-center space-x-4 max-w-xs"
-              >
-                <div className="bg-accent-gold p-3 rounded-full text-primary-900">
-                  <Users className="w-8 h-8" />
-                </div>
-                <div>
-                  <h4 className="font-bold">Expert Team</h4>
-                  <p className="text-sm text-slate-300">Proven Delivery</p>
-                </div>
-              </motion.div>
+              
+              {/* Backglow for the image composition */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-primary-900/5 to-transparent rounded-full blur-[100px] -z-10" />
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* About Preview */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1 relative">
               <div className="grid grid-cols-2 gap-4">
                 <img 
                   src={collabImg} 
-                  className="rounded-2xl shadow-lg mt-8 h-64 object-cover" 
+                  className="rounded-2xl shadow-lg h-64 object-cover" 
                   loading="lazy"
                   alt="Collaboration"
                 />
@@ -162,9 +238,9 @@ const Home = () => {
                   alt="Results"
                 />
               </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 bg-accent-gold text-primary-900 p-6 rounded-2xl shadow-2xl border-4 border-white text-center">
-                <span className="block text-xl md:text-2xl font-bold mb-1">Decades of</span>
-                <span className="text-xs lg:text-sm font-bold uppercase tracking-widest">combined consulting expertise</span>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-gold text-primary-900 px-3 py-1.5 rounded-xl shadow-lg border-2 border-white text-center z-20 scale-90 md:scale-100 min-w-[140px]">
+                <span className="block text-[10px] md:text-[11px] font-bold leading-tight uppercase tracking-tight">Decades of combined consulting</span>
+                <span className="block text-[9px] font-black uppercase tracking-[0.2em] opacity-90">expertise</span>
               </div>
             </div>
             <div className="order-1 lg:order-2">
