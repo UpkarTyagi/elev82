@@ -82,9 +82,9 @@ const Contact = () => {
                 </div>
                 <h4 className="text-xl font-bold mb-4 relative z-10">Business Hours</h4>
                 <ul className="space-y-3 text-slate-300 relative z-10">
-                  <li className="flex justify-between"><span>Mon - Fri</span> <span className="text-accent-gold font-bold">9:00 AM - 6:00 PM</span></li>
-                  <li className="flex justify-between"><span>Saturday</span> <span>By Appointment Only</span></li>
-                  <li className="flex justify-between"><span>Sunday</span> <span>Closed</span></li>
+                  <li className="flex justify-between"><span>Mon - Fri</span> <span className="text-accent-gold font-bold">9:00 AM - 5:00 PM</span></li>
+                  <li className="flex justify-between text-slate-400"><span>Saturday</span> <span className="uppercase text-[10px] font-black tracking-widest text-slate-500">Closed</span></li>
+                  <li className="flex justify-between text-slate-400"><span>Sunday</span> <span className="uppercase text-[10px] font-black tracking-widest text-slate-500">Closed</span></li>
                 </ul>
               </div>
             </motion.div>

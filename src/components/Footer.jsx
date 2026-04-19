@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Instagram, Linkedin, Twitter, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, Clock, Instagram, Linkedin, Twitter, ArrowUpRight } from 'lucide-react';
 import logoImg from '../assets/img/logo.png';
 
 const Footer = () => {
@@ -76,6 +76,16 @@ const Footer = () => {
                 <div>
                   <p className="text-xs uppercase tracking-widest text-slate-500 mb-1">Our Location</p>
                   <p className="text-white">Sydney, NSW 2000 Australia</p>
+                </div>
+              </li>
+              <li className="flex items-start space-x-3">
+                <div className="p-2 rounded bg-primary-900">
+                  <Clock className="w-5 h-5 text-accent-gold" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-slate-500 mb-1">Business Hours</p>
+                  <p className="text-white text-sm">Mon - Fri: 9 AM - 5 PM</p>
+                  <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Sat & Sun: Closed</p>
                 </div>
               </li>
             </ul>
