@@ -41,7 +41,7 @@ const Navbar = () => {
             <img 
               src={logoImg} 
               alt="Elev8 Consulting Group" 
-              className="h-12 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+              className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
             />
           </Link>
 

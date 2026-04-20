@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Target, Eye, ShieldCheck, Users, Globe, Lightbulb, Star, Zap, TrendingUp, CheckCircle } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import aboutStoryImg from '../assets/img/two-male-colleagues-office-standing-with-laptop.jpg';
-import foundersTeamImg from '../assets/img/business-people-meeting-office.jpg';
+import foundersTeamImg from '../assets/img/elev8-team-leadership.png';
 
 const About = () => {
   const values = [

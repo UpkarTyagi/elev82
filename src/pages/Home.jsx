@@ -182,9 +182,7 @@ const Home = () => {
                 <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent-blue/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
                 
                 {/* Floating Metric Card 1 */}
-                <motion.div 
-                  animate={{ y: [0, -20, 0], rotate: [0, 2, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                <div 
                   className="absolute -top-6 -right-6 lg:-right-12 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-2xl border border-white/50 z-20 flex items-center space-x-4 max-w-[200px]"
                 >
                   <div className="h-10 w-10 flex items-center justify-center bg-accent-gold text-primary-900 rounded-lg shadow-inner">
@@ -194,12 +192,10 @@ const Home = () => {
                     <div className="text-xs font-black text-primary-900/40 uppercase tracking-tighter">Growth Rate</div>
                     <div className="text-xl font-black text-primary-900">+150%</div>
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Floating Metric Card 2 */}
-                <motion.div 
-                  animate={{ y: [0, 20, 0], rotate: [0, -2, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                <div 
                   className="absolute -bottom-10 left-0 lg:-left-8 bg-white p-5 rounded-2xl shadow-2xl z-20 border border-slate-100 flex items-center space-x-4 min-w-[220px]"
                 >
                   <div className="bg-primary-900 p-3 rounded-xl shadow-inner">
@@ -209,7 +205,7 @@ const Home = () => {
                     <div className="text-xs font-black text-primary-900 mb-0.5">Project Complete</div>
                     <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">98% Client Satisfaction</div>
                   </div>
-                </motion.div>
+                </div>
               </div>
               
               {/* Backglow for the image composition */}

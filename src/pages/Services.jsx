@@ -156,7 +156,7 @@ const Services = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-24 bg-white border-b border-slate-100">
+      <section className="py-12 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <motion.span 
@@ -170,7 +170,7 @@ const Services = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-bold text-primary-900 mb-8 leading-tight tracking-tighter"
+              className="text-5xl md:text-7xl font-bold text-primary-900 mb-4 leading-tight tracking-tighter"
             >
               Transform How Your Business<br />
               <span className="text-gradient">Operates, Scales, and Performs</span>
@@ -179,7 +179,7 @@ const Services = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-slate-600 leading-relaxed mb-6 font-medium"
+              className="text-xl text-slate-600 leading-relaxed mb-2 font-medium"
             >
               At Elev8 Consulting Group, we help small and growing businesses operate with the clarity, structure, and capability of high-performing organisations.
             </motion.p>
@@ -187,7 +187,7 @@ const Services = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-xl text-slate-600 leading-relaxed mb-10"
+              className="text-xl text-slate-600 leading-relaxed mb-6"
             >
               We combine process excellence, data intelligence, and AI-enabled solutions to simplify operations, unlock capacity, and enable sustainable growth.
             </motion.p>

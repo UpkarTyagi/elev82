@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Clock, Instagram, Linkedin, Twitter, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, Clock, Linkedin, ArrowUpRight } from 'lucide-react';
 import logoImg from '../assets/img/logo.png';
 
 const Footer = () => {
@@ -15,17 +15,19 @@ const Footer = () => {
               <img 
                 src={logoImg} 
                 alt="Elev8 Consulting Group" 
-                className="h-16 md:h-20 w-auto object-contain brightness-0 invert" 
+                className="h-8 md:h-10 w-auto object-contain" 
               />
             </Link>
             <p className="text-slate-400 leading-relaxed max-w-xs">
               Unlocking Potential. Driving Infinite Growth.
             </p>
             <div className="flex space-x-4">
-              {[Twitter, Linkedin, Instagram].map((Icon, i) => (
+              {[Linkedin].map((Icon, i) => (
                 <a 
                   key={i} 
-                  href="#" 
+                  href="https://www.linkedin.com/company/elev8-consulting-grp" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full border border-slate-800 bg-primary-900 flex items-center justify-center hover:bg-accent-gold hover:border-accent-gold transition-all group"
                 >
                   <Icon className="w-5 h-5 text-accent-gold group-hover:text-primary-900 transition-colors" />
@@ -66,7 +68,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-widest text-slate-500 mb-1">Email Us</p>
-                  <a href="mailto:elev8consulting@outlook.com.au" className="text-white hover:text-accent-gold transition-colors">elev8consulting@outlook.com.au</a>
+                  <a href="mailto:consult@elev8consulting.org" className="text-white hover:text-accent-gold transition-colors">consult@elev8consulting.org</a>
                 </div>
               </li>
               <li className="flex items-start space-x-3">

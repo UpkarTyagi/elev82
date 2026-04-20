@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, MapPin, Clock, Send, CheckCircle, Loader2 } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import Button from '../components/UI/Button';
-import contactImg from '../assets/img/dylan-gillis-KdeqA3aTnBY-unsplash.jpg';
+
 
 const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -21,7 +21,7 @@ const Contact = () => {
     data._subject = "New Lead: Elev8 Consulting Website";
 
     try {
-      await fetch("https://formsubmit.co/ajax/elev8consulting@outlook.com.au", {
+      await fetch("https://formsubmit.co/ajax/consult@elev8consulting.org", {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const Contact = () => {
                 <h3 className="text-2xl font-bold text-primary-900 mb-8">Direct Contact</h3>
                 <div className="space-y-8">
                   {[
-                    { icon: Mail, label: 'Email Us', value: 'elev8consulting@outlook.com.au', link: 'mailto:elev8consulting@outlook.com.au' },
+                    { icon: Mail, label: 'Email Us', value: 'consult@elev8consulting.org', link: 'mailto:consult@elev8consulting.org' },
                     { icon: MapPin, label: 'Location', value: 'Sydney, NSW 2000, Australia', link: 'https://maps.google.com' }
                   ].map((item, idx) => (
                     <div key={idx} className="flex gap-6 group">
@@ -196,7 +196,7 @@ const Contact = () => {
       <section className="h-[400px] bg-slate-200">
          <div className="w-full h-full relative">
             <img 
-               src={contactImg}
+               src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&q=80&w=1600"
                className="w-full h-full object-cover"
                loading="lazy"
                alt="Elev8 HQ"

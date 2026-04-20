@@ -7,7 +7,7 @@ const SectionHeader = ({ subtitle, title, description, dark = false, centered = 
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className={`inline-block text-xs font-bold uppercase tracking-[0.3em] mb-4 ${
+        className={`inline-block text-base md:text-xl font-bold uppercase tracking-[0.3em] mb-4 ${
           dark ? 'text-accent-gold' : 'text-accent-gold'
         }`}
       >
